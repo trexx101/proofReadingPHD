@@ -1,18 +1,44 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import { v4 } from 'uuid'
+
+import banner from '../img/prphd_banner_small.jpg'
+
 
 export default class IndexPage extends React.Component {
   render() {
+
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <section className="section">
+      
         <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="content">
+              <div
+                className="full-width-image-container margin-top-0"
+                style={{ backgroundImage: `url(${banner})` }}
+              >
+              </div>
+            </div>
           </div>
+        </div>
+
+          <div className="content">
+            <h1 className="has-text-weight-bold is-size-2">Testimonials</h1>
+          </div>
+          <article key={v4()} className="message">
+            <div className="message-body">
+              Big Thanks to Proofreading by a UK PhD. I send my measurement items for proofread and editing service. My supervisor is VERY satisfied with the quality work. It is noticeable the questionnaire is easy to read and understand after they done the improvement. Dr Thava and and the team members also very patient to answer my inquiry and send back the work to me in timeliness manner. Thus, i would strongly recommended others to use their service. It is top tier service :) Great Job
+              <br />
+              <cite> – Lom Hui Shan</cite>
+            </div>
+          </article>
+          {/* comment out posts, perform query to get content of testimonials dynamicly from services markdown. rather than staticly as in above
           {posts
             .map(({ node: post }) => (
               <div
@@ -37,8 +63,8 @@ export default class IndexPage extends React.Component {
                 </p>
               </div>
             ))}
+            */}
         </div>
-      </section>
     )
   }
 }
