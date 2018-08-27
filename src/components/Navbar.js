@@ -32,7 +32,7 @@ const Navbar = () => (
         </Link>
       </div>
       <div className="navbar-end">
-        <div>
+        <div className="navbar-item">
         <ReactFBLike language="en_UK" appId="717589285046812" version="v2.12" href="https://www.facebook.com/proofreadingbyPhD/0"/>
         </div>
       
